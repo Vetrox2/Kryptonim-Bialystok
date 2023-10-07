@@ -23,6 +23,12 @@ public class Bebech : Enemy
     [SerializeField] GameObject cokeDummyBIG;
     [SerializeField] GameObject cokeDummyBullet;
     [SerializeField] List<GameObject> cokeDummyAmmo;
+
+    [Header("Bebzol Audio")]
+    [SerializeField] AudioSource ads;
+    [SerializeField] AudioClip chargeClip;
+    [SerializeField] AudioClip meleeClip;
+
     int AmmoCount = 0;
     bool ready = true;
     bool chargeReady = true;
@@ -103,26 +109,16 @@ public class Bebech : Enemy
             }
         }
     }
-    //ChargeDMG
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player") && charging)
+        if (collision.CompareTag("Player") && charging)
         {
-            foreach (var c1 in collision.gameObject.GetComponent<PlayerController>().Colliders)
-                foreach (var c2 in Colliders)
-                {
-                    Physics2D.IgnoreCollision(c1, c2);
-                    StartCoroutine(IngoreCollisionDelay(c1, c2));
-                }
-            collision.collider.GetComponent<PlayerController>().stunned = true;
-            collision.collider.GetComponent<Health>().TakenDamage(knockbackDamage);
-            collision.collider.GetComponent<Rigidbody2D>().velocity = new Vector2(0, knockbackHight);
+            collision.GetComponent<PlayerController>().stunned = true;
+            collision.GetComponent<Health>().TakenDamage(knockbackDamage);
+            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, knockbackHight);
+            collision.GetComponent<Rigidbody2D>().gravityScale = 0.15f;
         }
-    }
-    IEnumerator IngoreCollisionDelay(Collider2D c1, Collider2D c2)
-    {
-        yield return new WaitForSeconds(0.1f);
-        Physics2D.IgnoreCollision(c1, c2, false);
+
     }
     protected override void Shoot()
     {
@@ -162,6 +158,9 @@ public class Bebech : Enemy
             ready = false;
             StartCoroutine(AttackCD((float)(0.4 * reloadTime)));
             reloadCancelled = true;
+            ads.clip = meleeClip;
+            ads.volume = 2f;
+            ads.Play();
             MeleeAttack();
         }
     }
@@ -193,6 +192,9 @@ public class Bebech : Enemy
 
     void Charge()
     {
+        ads.clip = chargeClip;
+        ads.volume = 0.5f;
+        ads.Play();
         chargeReady = false;
         charging = true;
     }

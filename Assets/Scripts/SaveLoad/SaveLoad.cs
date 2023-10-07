@@ -97,7 +97,6 @@ static public class SaveLoad
     static public void LoadControls()
     {
         string controls = PlayerPrefs.GetString("Controls", string.Empty);
-        Debug.Log(controls);
         if(string.IsNullOrEmpty(controls)) { return; }
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerInput>().actions.LoadBindingOverridesFromJson(controls);
     }

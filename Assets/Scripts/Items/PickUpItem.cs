@@ -36,7 +36,7 @@ public class PickUpItem : IDsc
             ready = false;
             if(ItemID == GameManager.ItemID.Key)
             {
-                GameObject.FindGameObjectWithTag("Portal").GetComponent<NextLVLtp>().GotKey();
+                GameObject.FindGameObjectWithTag("NextLVL").GetComponent<NextLVLtp>().GotKey();
                 Destroy(this.gameObject);
                 return;
             }

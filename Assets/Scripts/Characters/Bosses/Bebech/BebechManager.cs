@@ -7,6 +7,8 @@ public class BebechManager : MonoBehaviour
     [SerializeField] AudioSource ads;
     [SerializeField] GameObject teleport;
     [SerializeField] GameObject boss;
+    [SerializeField] GameObject healthBar;
+    [SerializeField] AudioClip nieClip;
     private void Start()
     {
         boss.GetComponent<Health>().OnDeath += ActivateTP;
@@ -16,10 +18,16 @@ public class BebechManager : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ads.Play();
+            healthBar.SetActive(true);
         }
     }
     void ActivateTP()
     {
         teleport.SetActive(true);
+        ads.Stop();
+        ads.clip = nieClip;
+        ads.loop = false;
+        ads.volume = 0.25f;
+        ads.Play();
     }
 }

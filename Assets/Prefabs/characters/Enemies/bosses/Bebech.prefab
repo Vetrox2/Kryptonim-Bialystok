@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 6121288816825531638}
   - component: {fileID: 6775083289326597168}
   - component: {fileID: -4147938165759414426}
+  - component: {fileID: 8825376271436050298}
   m_Layer: 6
   m_Name: Bebech
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   knockbackDamage: 1
-  knockbackHight: 10
+  knockbackHight: 3
   movementBoost: 5
   healingSlow: 0.5
   healingValue: 3
@@ -137,7 +138,7 @@ MonoBehaviour:
   meleeRange: 2
   fastCokeSpeed: 8
   Shoot2CokeRotation:
-  - 65
+  - 78
   - 85
   - 90
   cokeDummyBIG: {fileID: 3277689055104580430}
@@ -146,6 +147,9 @@ MonoBehaviour:
   - {fileID: 8734894829059989313}
   - {fileID: 6360038230995822931}
   - {fileID: 2854552729031527309}
+  ads: {fileID: -4147938165759414426}
+  chargeClip: {fileID: 8300000, guid: 0a54ee0f68ff1d44c9c57015f2c62eeb, type: 3}
+  meleeClip: {fileID: 8300000, guid: e0b2a19383fd1aa4ba60349acb8947db, type: 3}
 --- !u!114 &6339111854771302102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unkillable: 0
   health: 0
-  maxHealth: 20
+  maxHealth: 25
   drop:
   - {fileID: 4612886547992024268, guid: cd6dd0a142fee9a45966b89637557840, type: 3}
   dropAmount: 01000000
@@ -212,8 +216,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -297,6 +301,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &8825376271436050298
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358575663842675505}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.5817077, y: -0.30832422}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.24, y: 10.24}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0510325, y: 6.51015}
+  m_EdgeRadius: 0
 --- !u!1 &2854552729031527309
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,11 +767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790466181426518998, guid: 227f6fb1ab3fed149a12f302b302505a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.12
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2790466181426518998, guid: 227f6fb1ab3fed149a12f302b302505a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.44
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2790466181426518998, guid: 227f6fb1ab3fed149a12f302b302505a, type: 3}
       propertyPath: m_LocalPosition.z

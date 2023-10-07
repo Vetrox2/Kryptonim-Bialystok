@@ -18,7 +18,7 @@ public class PlayerController : Character
     [SerializeField] Collider2D GroundCheck;
 
     //EQ
-    public int[] itemEQ = new int[4] { 0, 0, 0, 0 };
+    public int[] itemEQ = new int[5] { 0, 0, 0, 0, 0 };
 
     //shitty variable needed for dash speed and duration
     public float dashSpeed = 2f;
@@ -65,9 +65,9 @@ public class PlayerController : Character
                 rb.velocity = new Vector2(move * movementSpeed, rb.velocity.y);
             }
         }
-        if (stunned && Mathf.Abs(rb.velocity.y) < 0.0001)
+        if (stunned)
         {
-            stunned = false;
+            Invoke("StunnedGroundCheck", 1f);
         }
         //rangeAttack
         if (rangeWeapon != null && shooting.performed)
@@ -75,7 +75,14 @@ public class PlayerController : Character
             rangeWeapon.GetComponent<RangeWeapon>().shoot();
         }
     }
-
+    void StunnedGroundCheck()
+    {
+        if (stunned && GroundCheck.IsTouchingLayers(1 << LayerMask.NameToLayer("Ground")))
+        {
+            stunned = false;
+            rb.gravityScale = 2f;
+        }
+    }
         IEnumerator ToFast()
         {
         float a = 0.1f;
