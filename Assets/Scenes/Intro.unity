@@ -132,10 +132,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217364766}
-  - component: {fileID: 217364765}
-  - component: {fileID: 217364764}
   - component: {fileID: 217364763}
   - component: {fileID: 217364767}
+  - component: {fileID: 217364764}
+  - component: {fileID: 217364765}
+  - component: {fileID: 217364768}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -156,6 +157,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fill: 0
+  backgroundCtr: {fileID: 975853167}
+  textbackgroundCtr: {fileID: 881216633}
+  texts:
+  - "Za g\xF3rami, za lasami w miejscowo\u015Bci zwanej Szczyny \u017Cy\u0142 pewien
+    kret. Kret prowadzi\u0142 szcz\u0119\u015Bliwe \u017Cycie, gdy\u017C posiada\u0142
+    wszystko, co by\u0142o mu potrzebne. Mowa o ksi\u0119\u017Cniczce Kuroliszce,
+    kt\xF3r\u0105 Kret kocha\u0142 ponad \u017Cycie."
+  - "Pewnego razu nie by\u0142 wstanie przygotowa\u0107 ulubionej potrawy dla swej
+    ksi\u0119\u017Cniczki - makaronu al dente z sosem z saszetki z podpiekanym na
+    patelni mi\u0119sem, tak zwane szpageti bolonizi."
+  - "Kret by\u0142 wtedy chory. Ksi\u0119\u017Cniczka prosi\u0142a go, by zosta\u0142
+    w domu i odpoczywa\u0142, mimo to, wyruszy\u0142 razem z ni\u0105 w podr\xF3\u017C
+    do zielonego sklepu za poblisk\u0105 g\xF3r\u0105, aby zdoby\u0107 potrzebne
+    sk\u0142adniki."
+  - "Ksi\u0119\u017Cniczka obrazi\u0142a si\u0119 na swego Kreta i odesz\u0142a w
+    dal. Nie spodziewa\u0142a si\u0119, \u017Ce czycha na ni\u0105 z\u0142y Bebeniusz,
+    kt\xF3ry wykorzysta\u0142 sytuacj\u0119 i porwa\u0142 ksi\u0119\u017Cniczk\u0119
+    do swej jaskini. "
+  src: {fileID: 217364768}
+  Clips:
+  - {fileID: 8300000, guid: 8cd4921d3bf9c7642b949043eb8c9150, type: 3}
+  - {fileID: 8300000, guid: 30ef1073cd5c3b64a8ae9dfd2fbdf9f4, type: 3}
+  - {fileID: 8300000, guid: 1b4a42149c05a2743844fb37be89c7df, type: 3}
+  - {fileID: 8300000, guid: 8b698174c974e0843bfdb9d2df137dac, type: 3}
 --- !u!114 &217364764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text AAAAAAAAAAAAAAAAAAAAAA DDDDDDDDDDDDDDDD BBBBBBBBBBBBBBBBBBBBBBBB
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -185,8 +210,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294046193
+  m_fontColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -203,18 +228,18 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 5.5
+  m_fontSizeBase: 5.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: -10
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -233,13 +258,13 @@ MonoBehaviour:
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
-  m_uvLineOffset: 0
+  m_uvLineOffset: 45454
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.5665913, y: 1.2356474, z: 0.7648134, w: 0}
+  m_margin: {x: 1.7959585, y: 1.161016, z: 1.1547394, w: 1.324707}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -297,18 +322,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217364762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 881216631}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.37, y: -3.66}
+  m_AnchoredPosition: {x: -0.3700008, y: -3.660001}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &217364767
@@ -321,7 +345,7 @@ Animator:
   m_GameObject: {fileID: 217364762}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a725fc1dafbcdda4bbffbe23f1a71b67, type: 2}
+  m_Controller: {fileID: 9100000, guid: c7729cd3da5b0ef46aebdf13461a275c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -331,6 +355,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!82 &217364768
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217364762}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &881216630
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +461,10 @@ GameObject:
   m_Component:
   - component: {fileID: 881216631}
   - component: {fileID: 881216632}
+  - component: {fileID: 881216633}
+  - component: {fileID: 881216634}
   m_Layer: 0
-  m_Name: backg
+  m_Name: textBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,12 +478,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881216630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8639, y: -0.6136558, z: -0.020809}
-  m_LocalScale: {x: 37.170975, y: 3.9875, z: 3.9875}
+  m_LocalPosition: {x: 0.22, y: -4.08, z: -0.020809}
+  m_LocalScale: {x: 6, y: 7.426718, z: 3.9874997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 217364766}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &881216632
 SpriteRenderer:
@@ -404,17 +526,50 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0.9098039}
+  m_Sprite: {fileID: 21300000, guid: 1781431a20ebbfc4aab0949c3e554892, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 4, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &881216633
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881216630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 507d54f45960548408738caf626e1956, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &881216634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881216630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350536ddbccec834b8ebd1a3bf39edcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newSprite: []
 --- !u!1 &975853164
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +630,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: e061c99e5d66ea340b15b44fb56d37b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a4af31d93fb7714084b40d86b2ff248, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -495,8 +650,8 @@ Transform:
   m_GameObject: {fileID: 975853164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.36, y: 1.36, z: 1.36}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.65, y: 1.36, z: 1.36}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -511,7 +666,7 @@ Animator:
   m_GameObject: {fileID: 975853164}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a725fc1dafbcdda4bbffbe23f1a71b67, type: 2}
+  m_Controller: {fileID: 9100000, guid: 507d54f45960548408738caf626e1956, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -533,7 +688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350536ddbccec834b8ebd1a3bf39edcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 388af591df14eb84ba88bab7459132f3, type: 3}
+  newSprite:
+  - {fileID: 21300000, guid: 94d1c8468a3914c498762e5bd71ec0d0, type: 3}
+  - {fileID: 21300000, guid: 601b6041c62ad2a469003ec76c5c2b08, type: 3}
+  - {fileID: 21300000, guid: 67bad693b71ee484eac15f5796bbf9f4, type: 3}
 --- !u!1 &999262325
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,5 +842,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

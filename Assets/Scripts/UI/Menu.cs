@@ -25,7 +25,7 @@ public class Menu : MonoBehaviour
     [SerializeField] TextMeshProUGUI saveText1;
     [SerializeField] TextMeshProUGUI saveText2;
     [SerializeField] TextMeshProUGUI saveText3;
-    bool newGame;
+    bool newGame = false;
 
     GameObject currentMenu;
     private void Start()
