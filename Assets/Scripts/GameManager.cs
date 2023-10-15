@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         SaveLoad.LoadObjects("EnemySpawn", ref SaveLoad.EnemiesDataList, "/enemiesData.sav");
         SaveLoad.LoadObjects("ItemSpawn", ref SaveLoad.ItemDataList, "/itemsData.sav");
         SaveLoad.newLVL = false;
+        //VolumeSettings.SetVolume();
     }
     
     public void Save()

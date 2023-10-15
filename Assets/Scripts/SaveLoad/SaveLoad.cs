@@ -91,7 +91,6 @@ static public class SaveLoad
     static public void SaveControls(PlayerInput input)
     {
         string controls = input.actions.SaveBindingOverridesAsJson();
-        Debug.Log(controls);
         PlayerPrefs.SetString("Controls", controls );
     }
     static public void LoadControls()

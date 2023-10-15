@@ -14,6 +14,8 @@ public class LimitText : MonoBehaviour
     [SerializeField] List<string> texts = new List<string>();
     [SerializeField] AudioSource src;
     [SerializeField] List<AudioClip> Clips;
+    [SerializeField] bool canBlackOut = true;
+    [SerializeField] GameObject endScreen;
     private int i = 0;
     private TextMeshPro text;
     private string textContent;
@@ -22,6 +24,10 @@ public class LimitText : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshPro>();
+        if (!canBlackOut)
+        {
+            GetComponent<Animator>().SetBool("CanBlackOut", false);
+        }
     }
 
     // Update is called once per frame
@@ -40,7 +46,7 @@ public class LimitText : MonoBehaviour
     }
     public void StartBGBlackout()
     {
-        if (texts.Count != i)
+        if (texts.Count != i && backgroundCtr != null && textbackgroundCtr != null)
         {
             backgroundCtr.SetBool("ChangeBG", true);
             textbackgroundCtr.SetBool("ChangeBG", true);
@@ -65,6 +71,19 @@ public class LimitText : MonoBehaviour
     }
     private void NextLVL()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.sceneCountInBuildSettings != SceneManager.GetActiveScene().buildIndex + 1)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+        {
+            textContent = "";
+            text.text = "";
+            endScreen.SetActive(true);
+            textbackgroundCtr.gameObject.SetActive(false);
+            Invoke("GetToMenu", 15f);
+        }
+    }
+    private void GetToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

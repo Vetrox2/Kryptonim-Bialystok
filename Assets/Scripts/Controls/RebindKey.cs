@@ -31,7 +31,10 @@ public class RebindKey : MonoBehaviour
         }
         Button.SetActive(false);
         RebindText.SetActive(true);
-        RebindOperation = Action.action.PerformInteractiveRebinding().WithControlsExcluding("<keyboard>/escape").WithControlsExcluding("<keyboard>/anykey").OnMatchWaitForAnother(0.1f).OnComplete(arg => Complited()).Start();
+        RebindOperation = Action.action.PerformInteractiveRebinding()
+            .WithControlsExcluding("<keyboard>/escape").WithControlsExcluding("<keyboard>/anykey")
+            .WithControlsExcluding("<keyboard>/a").WithControlsExcluding("<keyboard>/d")
+            .OnMatchWaitForAnother(0.1f).OnComplete(arg => Complited()).Start();
     }
     private void Complited()
     {

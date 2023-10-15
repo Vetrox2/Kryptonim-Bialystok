@@ -120,9 +120,12 @@ public class PlayerController : Character
             Invoke("ResetDash", dashCooldown);
         }
     }
-    public void MeleeAttack()
+    public void MeleeAttack(InputAction.CallbackContext contex)
     {
-        meleeWeapon.GetComponent<Sword>().StartAttack();
+        if (contex.started)
+        {
+            meleeWeapon.GetComponent<Sword>().StartAttack();
+        }
     }
     public void RangeAttack(InputAction.CallbackContext contex)
     {
@@ -139,11 +142,14 @@ public class PlayerController : Character
             }
         }
     }
-    public void PickUp()
+    public void PickUp(InputAction.CallbackContext contex)
     {
-        pickUp = true;
-        Invoke("PickUpCD", 0.2f);
-        Interact?.Invoke();
+        if (contex.started)
+        {
+            pickUp = true;
+            Invoke("PickUpCD", 0.2f);
+            Interact?.Invoke();
+        }
     }
     
     void ResetDash()

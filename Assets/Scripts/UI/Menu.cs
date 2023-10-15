@@ -32,6 +32,7 @@ public class Menu : MonoBehaviour
     {
         newGame = false;
         SaveLoad.LoadControls();
+        //VolumeSettings.SetVolume();
     }
     public void NewGame()
     {
