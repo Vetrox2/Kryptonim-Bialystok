@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unkillable: 0
   health: 0
-  maxHealth: 25
+  maxHealth: 30
   drop:
   - {fileID: 4612886547992024268, guid: cd6dd0a142fee9a45966b89637557840, type: 3}
   dropAmount: 01000000

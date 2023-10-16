@@ -4,8 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 using UnityEngine.InputSystem;
+using System.IO;
 
 public class Menu : MonoBehaviour
 {
@@ -141,8 +141,27 @@ public class Menu : MonoBehaviour
         if (newGame)
         {
             PlayerPrefs.SetInt(PlayerPrefs.GetString("CurrentSave") + "LVL", 1);
-            Directory.Delete(Application.dataPath + PlayerPrefs.GetString("CurrentSavePath"));
+            if(Directory.Exists(Application.dataPath + PlayerPrefs.GetString("CurrentSavePath")))
+                DeleteDirectory(Application.dataPath + PlayerPrefs.GetString("CurrentSavePath"));
         }
+    }
+    public static void DeleteDirectory(string target_dir)
+    {
+        string[] files = Directory.GetFiles(target_dir);
+        string[] dirs = Directory.GetDirectories(target_dir);
+
+        foreach (string file in files)
+        {
+            File.SetAttributes(file, FileAttributes.Normal);
+            File.Delete(file);
+        }
+
+        foreach (string dir in dirs)
+        {
+            DeleteDirectory(dir);
+        }
+
+        Directory.Delete(target_dir, false);
     }
     void CreateDir()
     {
